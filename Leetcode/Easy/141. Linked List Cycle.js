@@ -14,13 +14,14 @@
  */
 const hasCycle = function(head) {
     let answer=false;
+    let set=new Set();
 
     while(head){
-        if(head.val===null){
+        if(set.has(head)){
             answer=true;
             break;
         }
-        head.val=null;
+        set.add(head);
         head=head.next;
     }
 
