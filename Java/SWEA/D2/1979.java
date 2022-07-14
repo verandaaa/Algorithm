@@ -20,27 +20,23 @@ class Solution {
 					arr[i][j]=Integer.parseInt(st.nextToken());
 				}			
 			}
-			for(int i=0;i<n;i++) { //가로
-				int cnt=0;
+			for(int i=0;i<n;i++) {
+				int cnt1=0;
+				int cnt2=0;
 				for(int j=0;j<n;j++) {
-					if(arr[i][j]==1)
-						cnt++;
+					if(arr[i][j]==1) //가로
+						cnt1++;
 					if(arr[i][j]==0||j==n-1) {
-						if(cnt==m)
+						if(cnt1==m)
 							answer++;
-						cnt=0;
+						cnt1=0;
 					}
-				}
-			}
-			for(int i=0;i<n;i++) { //세로
-				int cnt=0;
-				for(int j=0;j<n;j++) {
-					if(arr[j][i]==1)
-						cnt++;
+					if(arr[j][i]==1) //세로
+						cnt2++;
 					if(arr[j][i]==0||j==n-1) {
-						if(cnt==m)
+						if(cnt2==m)
 							answer++;
-						cnt=0;
+						cnt2=0;
 					}
 				}
 			}
